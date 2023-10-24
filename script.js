@@ -21,6 +21,7 @@ listenBtn.addEventListener('click', () => {
     let voices = window.speechSynthesis.getVoices();
     let utterance = new SpeechSynthesisUtterance(`${quoteText.innerText} by ${authorText.innerText}`);
     utterance.voice = voices[1];
+    utterance.voice.lang = 'en-GB';
     speechSynthesis.speak(utterance);
 });
 
