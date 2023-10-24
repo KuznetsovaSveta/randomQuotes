@@ -114,14 +114,30 @@ button{
     transition: 0.2s ease border, 0.2s ease color;
 }
 .hero__listen:hover, .hero__copy:hover{
-    border: 2px solid #5362cb;
+    border-color: #5362cb;
     color: #5362cb;
 }
 .hero__listen svg, .hero__copy svg{
     fill: currentColor;
-    transition: 0.2s ease;
     width: 24px;
     height: 24px;
+    position: absolute;
+}
+.ico-copy, .ico-ok{
+    transition: 0.3s ease transform;
+}
+.ico-ok{
+    transform: scale(0);
+}
+.hero__copy.copied{
+    border-color: #fe685e;
+    color: #fe685e;
+}
+.hero__copy.copied .ico-copy{
+    transform: scale(0);
+}
+.hero__copy.copied .ico-ok{
+    transform: scale(1);
 }
 .hero__generate{
     width: 130px;

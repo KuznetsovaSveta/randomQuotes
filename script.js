@@ -7,7 +7,8 @@ let listenBtn = document.querySelector('.hero__listen');
 function generate(){
     generateButton.classList.add('loading');
     generateButton.innerText = 'Loading Quote...';
-    fetch('http://api.quotable.io/random').then(res => res.json().then(result => {
+    copyBtn.classList.remove('copied');
+    fetch('https://api.quotable.io/random').then(res => res.json().then(result => {
         quoteText.innerHTML = result.content;
         authorText.innerHTML = result.author;
         generateButton.innerText = 'Generate Quote'
@@ -25,4 +26,5 @@ listenBtn.addEventListener('click', () => {
 
 copyBtn.addEventListener('click', () => {
    navigator.clipboard.writeText(`${quoteText.innerText}`);
+    copyBtn.classList.add('copied');
 });
