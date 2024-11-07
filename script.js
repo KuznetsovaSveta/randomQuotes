@@ -8,7 +8,7 @@ function generate(){
     generateButton.classList.add('loading');
     generateButton.innerText = 'Loading Quote...';
     copyBtn.classList.remove('copied');
-    fetch('https://api.quotable.io/random').then(res => res.json().then(result => {
+    fetch('http://api.quotable.io/random').then(res => res.json().then(result => {
         quoteText.innerHTML = result.content;
         authorText.innerHTML = result.author;
         generateButton.innerText = 'Generate Quote'
